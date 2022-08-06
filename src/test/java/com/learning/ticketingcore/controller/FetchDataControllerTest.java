@@ -13,19 +13,31 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
-class FetchTicketDataTest {
+class FetchDataControllerTest {
 
     @Autowired
-    private FetchTicketData fetchTicketData;
+    private FetchDataController fetchDataController;
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     public void test_allEvents() {
-        Assertions.assertNotNull(fetchTicketData.getAllEventTypes());
+        Assertions.assertNotNull(fetchDataController.getAllEventTypes());
         try {
             mockMvc.perform(get("/find/allEvents")).andExpect(status().isOk());
+        }
+        catch(Exception ex)
+        {
+            fail("Controller failed in initialization"+ ExceptionUtils.readStackTrace(ex));
+        }
+    }
+
+    @Test
+    public void test_allTravelModes() {
+        Assertions.assertNotNull(fetchDataController.getAllEventTypes());
+        try {
+            mockMvc.perform(get("/find/allTravelModes")).andExpect(status().isOk());
         }
         catch(Exception ex)
         {

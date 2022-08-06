@@ -5,28 +5,31 @@ import com.learning.ticketingcore.vo.Country;
 import com.learning.ticketingcore.vo.EventDateTiming;
 import com.learning.ticketingcore.vo.EventName;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
+/**
+ * Class to handle movie tickets related requests.
+ */
+
 @Service
-public class MovieTicketImpl implements EventTickets{
-    @Override
-    public List<Country> getCountries() {
-        return null;
-    }
+public class MovieTicketImpl implements EventTickets {
+  @Override
+  public List<Country> getCountries() {
+    return null;
+  }
 
-    @Override
-    public List<City> getCities() {
-        return null;
-    }
+  @Override
+  public List<City> getCities() {
+    return null;
+  }
 
-    @Override
-    public List<EventName> getEventNames() {
-        return null;
-    }
+  @Override
+  public List<EventName> getEventNames() {
+    return null;
+  }
 
-    @Override
-    public List<EventDateTiming> getEventDates() {
-        return null;
-    }
+  @Override
+  public List<EventDateTiming> getEventDates() {
+    return null;
+  }
 }

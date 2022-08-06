@@ -15,6 +15,7 @@
 	<description>Ticketing core system</description>
 	<properties>
 		<java.version>11</java.version>
+		<checkstyle-maven-plugin.version>3.1.2</checkstyle-maven-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -45,6 +46,31 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle-maven-plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.puppycrawl.tools</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>10.3.1</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					 <violationSeverity>warning</violationSeverity>
+					<consoleOutput>true</consoleOutput>
+					<encoding>UTF-8</encoding>
+					<configLocation>src/main/resources/google_checks_custom.xml</configLocation>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

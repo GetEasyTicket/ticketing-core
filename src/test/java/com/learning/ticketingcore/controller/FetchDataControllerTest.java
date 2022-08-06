@@ -26,10 +26,8 @@ class FetchDataControllerTest {
         Assertions.assertNotNull(fetchDataController.getAllEventTypes());
         try {
             mockMvc.perform(get("/find/allEvents")).andExpect(status().isOk());
-        }
-        catch(Exception ex)
-        {
-            fail("Controller failed in initialization"+ ExceptionUtils.readStackTrace(ex));
+        } catch (Exception ex) {
+            fail("Controller failed in initialization" + ExceptionUtils.readStackTrace(ex));
         }
     }
 
@@ -38,10 +36,8 @@ class FetchDataControllerTest {
         Assertions.assertNotNull(fetchDataController.getAllEventTypes());
         try {
             mockMvc.perform(get("/find/allTravelModes")).andExpect(status().isOk());
-        }
-        catch(Exception ex)
-        {
-            fail("Controller failed in initialization"+ ExceptionUtils.readStackTrace(ex));
+        } catch (Exception ex) {
+            fail("Controller failed in initialization" + ExceptionUtils.readStackTrace(ex));
         }
     }
 }

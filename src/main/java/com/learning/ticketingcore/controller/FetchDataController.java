@@ -5,23 +5,24 @@ import com.learning.ticketingcore.enums.TravelMode;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Controller to handle all get requests.
+ */
 
 @RestController
 @RequestMapping("/find")
 public class FetchDataController {
 
-    @GetMapping("/allEvents")
-    public List<EventType> getAllEventTypes()
-    {
-        return new ArrayList<>(List.of(EventType.values()));
-    }
+  @GetMapping("/allEvents")
+  public List<EventType> getAllEventTypes() {
+    return new ArrayList<>(List.of(EventType.values()));
+  }
 
-    @GetMapping("/allTravelModes")
-    public List<TravelMode> getAllTravelModes()
-    {
-        return new ArrayList<>(List.of(TravelMode.values()));
-    }
+  @GetMapping("/allTravelModes")
+  public List<TravelMode> getAllTravelModes() {
+    return new ArrayList<>(List.of(TravelMode.values()));
+  }
 }

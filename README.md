@@ -1,6 +1,7 @@
 # ticketing-core
 Core system to view and book tickets
 
+# Troubleshooting
 For checkstyle
 
 Your XML file is too new (latest unreleased Checkstyle). Do not download the Google checks XML, instead check them in the list shown in your screenshot (put a checkmark next to "Google Checks").
